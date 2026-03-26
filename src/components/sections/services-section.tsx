@@ -1,30 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import buyingImgEs from '../../assets/images/es-yourhomewaitforyou.jpeg';
-import buyingImgEn from '../../assets/images/es-yourhomewaitforyou.jpeg';
-import sellingImgEs from '../../assets/images/es-floridabuild.jpeg';
-import sellingImgEn from '../../assets/images/es-floridabuild.jpeg';
-import investmentImgEs from '../../assets/images/es-buyfirsthouse.jpg';
-import investmentImgEn from '../../assets/images/es-buyfirsthouse.jpg';
+import buyingImg from '../../assets/images/service-buying.png';
+import sellingImg from '../../assets/images/service-selling.png';
+import investmentImg from '../../assets/images/service-investment.png';
 
 export const ServicesSection: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
-  const isSpanish = i18n.language === 'es';
-
-  const images = isSpanish
-    ? { buying: buyingImgEs, selling: sellingImgEs, investment: investmentImgEs }
-    : { buying: buyingImgEn, selling: sellingImgEn, investment: investmentImgEn };
 
   const services = [
-    { key: 'buying', image: images.buying },
-    { key: 'selling', image: images.selling },
-    { key: 'investment', image: images.investment },
+    { key: 'buying', image: buyingImg },
+    { key: 'selling', image: sellingImg },
+    { key: 'investment', image: investmentImg },
   ];
 
-  const handleClick = () => {
-    navigate('/contacto');
+  const handleClick = (serviceKey: string) => {
+    navigate(`/contacto?service=${serviceKey}`);
     setTimeout(() => {
       const el = document.getElementById('contacto');
       if (el) {
@@ -79,7 +71,7 @@ export const ServicesSection: React.FC = () => {
                     {t(`services.${service.key}.description`)}
                   </p>
                   <button
-                    onClick={handleClick}
+                    onClick={() => handleClick(service.key)}
                     className="inline-flex items-center gap-2 text-[rgb(190,137,41)] font-semibold hover:text-[rgb(160,115,30)] transition-colors group/link cursor-pointer bg-transparent border-none p-0 text-base"
                   >
                     {t('services.cta') || 'Solicitar información'}

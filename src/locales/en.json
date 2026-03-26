@@ -18,9 +18,13 @@
   },
   "hero": {
     "title": "Opening doors to your future. One step closer to home",
-    "subtitle": "Certified Realtor® in Florida. I guide you in every step: buying, selling, and investing in properties",
+    "subtitle": "Real estate agent in Florida. I guide you in every step: buying, selling, and investing in properties",
     "cta_primary": "Get Started",
-    "social_proof": "Certified by Realtor® WRA"
+    "social_proof": "Your guide in the Florida market",
+    "services_badge_title": "Specialist in:",
+    "services_badge_1": "Buying",
+    "services_badge_2": "Selling",
+    "services_badge_3": "Investing"
   },
   "services": {
     "title": "Professional Real Estate Services",
@@ -41,9 +45,26 @@
   },
   "about": {
     "title": "About Gissel Mujica",
-    "bio": "Certified Realtor® WRA agent with personal home buying experience. My mission is that each client experiences the real estate journey with confidence, professional guidance and personalized support.",
+    "bio": "Real estate agent with personal home buying experience. My mission is that each client experiences the real estate journey with confidence, professional guidance and personalized support.",
     "values": "Trust, education and support in every decision",
-    "certification": "Certified by Realtor® WRA"
+    "certification": "Professional Real Estate Services",
+    "badge_subtitle": "Service",
+    "badge_title": "Personalized",
+    "story_badge": "My Story",
+    "story_title_1": "Guiding your path to the",
+    "story_title_highlight": "ideal home",
+    "story_p1": "My mission is simple: that every client experiences buying, selling, or investing in real estate with confidence, professional guidance, and personalized support.",
+    "story_p2": "I've been on the client's side; I know what it means to find the perfect home, and I want to make that process as smooth, transparent, and stress-free as possible for you. I am proud to be a continuous educational resource and an unwavering support.",
+    "card1_title": "Trust",
+    "card1_desc": "Based on real experience, proven results, and always transparent communication.",
+    "card2_title": "Education",
+    "card2_desc": "I explain each step of the real estate process in detail so you can make the best decisions.",
+    "card3_title": "Support",
+    "card3_desc": "I am by your side for every important decision, always advocating for your interests and goals.",
+    "callout_title": "Why is it important to choose a professional?",
+    "callout_desc": "A real estate agent does more than just show houses. They negotiate, inform, protect your interests, and guide you through each step of the process. My commitment is to professional excellence and providing you the best real estate experience in Florida.",
+    "callout_badge": "Real Estate Advisory",
+    "callout_btn": "Contact Me Today"
   },
   "contact": {
     "title": "Get in Touch",
@@ -61,13 +82,23 @@
       "service_other": "Other",
       "message": "Message",
       "submit": "Send Message",
+      "sending": "Redirecting to email...",
       "success": "Message sent successfully!",
-      "error": "Error sending message. Please try again."
+      "error": "Error sending message. Please try again.",
+      "default_msg_buy": "Hi Gissel, I'm interested in buying a property in Florida. I'd like to schedule a consultation.",
+      "default_msg_sell": "Hi Gissel, I want to sell my property and would like to know the process and a professional valuation.",
+      "default_msg_investment": "Hi Gissel, I'm looking for real estate investment opportunities in Florida. Can you help me?"
     },
     "info": {
       "title": "Contact Information",
-      "location": "Online service throughout Florida",
+      "location_title": "Location",
+      "location": "Florida, USA",
+      "contact_title": "Contact",
+      "email_title": "Email",
+      "hours_title": "Office Hours",
       "hours": "Monday to Friday, 9:00 AM - 6:00 PM",
+      "callout_title": "Ready to take the next step?",
+      "callout_subtitle": "Don't hesitate to reach out. We are here to help you find your dream home.",
       "response": "I respond within 24 hours"
     }
   },

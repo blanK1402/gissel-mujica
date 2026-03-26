@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
+import { CONTACT_INFO } from '../../config/constants';
 
 export const ContactSection: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +13,42 @@ export const ContactSection: React.FC = () => {
     service: '',
     message: '',
   });
+
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      let message = '';
+      let serviceValue = '';
+
+      // Mapear el parámetro del URL con las opciones del formulario y mensajes
+      switch (serviceParam) {
+        case 'buying':
+        case 'buy':
+          serviceValue = 'buy';
+          message = t('contact.form.default_msg_buy');
+          break;
+        case 'selling':
+        case 'sell':
+          serviceValue = 'sell';
+          message = t('contact.form.default_msg_sell');
+          break;
+        case 'investment':
+          serviceValue = 'investment';
+          message = t('contact.form.default_msg_investment');
+          break;
+        default:
+          serviceValue = serviceParam;
+          message = '';
+      }
+
+      setFormData(prev => ({
+        ...prev,
+        service: serviceValue,
+        message: message || prev.message
+      }));
+    }
+  }, [searchParams, t]);
+
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const serviceOptions = [
@@ -30,36 +69,37 @@ export const ContactSection: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
 
     try {
-      const formElement = e.currentTarget as HTMLFormElement;
-      const fd = new FormData(formElement);
+      const subject = encodeURIComponent(`${t('contact.form.service')}: ${formData.service || t('contact.title')}`);
+      const bodyText = `
+${t('contact.form.name')}: ${formData.name}
+${t('contact.form.email')}: ${formData.email}
+${t('contact.form.phone')}: ${formData.phone}
+${t('contact.form.service')}: ${formData.service}
 
-      const response = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
-        method: 'POST',
-        body: fd,
-        headers: {
-          Accept: 'application/json',
-        },
+--- ${t('contact.form.message')} ---
+${formData.message}
+      `.trim();
+      
+      const body = encodeURIComponent(bodyText);
+      const mailtoUrl = `mailto:${CONTACT_INFO.EMAIL}?subject=${subject}&body=${body}`;
+
+      // Open email client in a new window/tab
+      window.open(mailtoUrl, '_blank');
+      
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
       });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: '',
-        });
-        setTimeout(() => setStatus('idle'), 3000);
-      } else {
-        setStatus('error');
-        setTimeout(() => setStatus('idle'), 3000);
-      }
+      setTimeout(() => setStatus('idle'), 3000);
     } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
@@ -160,91 +200,79 @@ export const ContactSection: React.FC = () => {
               />
             </div>
 
-            {status === 'success' && (
-              <div className="p-4 bg-green-100/80 text-green-700 rounded-xl border border-green-200">
-                {t('contact.form.success')}
-              </div>
-            )}
-
-            {status === 'error' && (
-              <div className="p-4 bg-red-100/80 text-red-700 rounded-xl border border-red-200">
-                {t('contact.form.error')}
-              </div>
-            )}
-
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-[rgb(190,137,41)] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[rgb(160,115,30)] hover:shadow-lg hover:shadow-[rgb(190,137,41)]/20 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mt-4 inline-flex items-center justify-center gap-3 rounded-xl bg-[rgb(190,137,41)] px-10 py-4 text-base font-bold text-white transition-all duration-300 hover:bg-[rgb(160,115,30)] hover:shadow-xl hover:shadow-[rgb(190,137,41)]/30 hover:-translate-y-1 disabled:opacity-50 disabled:translate-y-0 disabled:cursor-not-allowed w-full sm:w-auto"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
               </svg>
-              {status === 'loading' ? 'Enviando...' : t('contact.form.submit')}
+              {status === 'loading' ? t('contact.form.sending') : t('contact.form.submit')}
             </button>
           </form>
 
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full gap-6">
             <div className="bg-[rgb(229,229,223)] rounded-2xl p-6 md:p-8 shadow-lg border border-[rgb(190,137,41)]/10 flex-1">
               <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-6">
                 {t('contact.info.title')}
               </h3>
 
               <div className="space-y-5">
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[rgb(190,137,41)]/10 flex items-center justify-center text-[rgb(190,137,41)] shrink-0">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('contact.info.location')}</p>
-                    <p className="text-[rgb(45,45,42)] text-base">Florida, USA</p>
+                  <div>
+                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('contact.info.location_title')}</p>
+                    <p className="text-[rgb(45,45,42)]">{t('contact.info.location')}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[rgb(190,137,41)]/10 flex items-center justify-center text-[rgb(190,137,41)] shrink-0">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('common.contact')}</p>
-                    <a href={`tel:${import.meta.env.VITE_PHONE_NUMBER}`} className="text-[rgb(190,137,41)] hover:text-[rgb(160,115,30)] font-medium transition-colors text-base">{import.meta.env.VITE_PHONE_NUMBER}</a>
+                  <div>
+                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('contact.info.contact_title')}</p>
+                    <a href={CONTACT_INFO.PHONE_CALL} target="_blank" rel="noopener noreferrer" className="text-[rgb(190,137,41)] hover:text-[rgb(160,115,30)] font-medium">{CONTACT_INFO.PHONE_DISPLAY}</a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[rgb(190,137,41)]/10 flex items-center justify-center text-[rgb(190,137,41)] shrink-0">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-[rgb(100,98,92)]">Email</p>
-                    <a href={`mailto:${import.meta.env.VITE_EMAIL}`} className="text-[rgb(190,137,41)] hover:text-[rgb(160,115,30)] font-medium transition-colors text-base break-all">{import.meta.env.VITE_EMAIL}</a>
+                  <div>
+                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('contact.info.email_title')}</p>
+                    <a href={`mailto:${CONTACT_INFO.EMAIL}`} target="_blank" rel="noopener noreferrer" className="text-[rgb(190,137,41)] hover:text-[rgb(160,115,30)] font-medium break-all">{CONTACT_INFO.EMAIL}</a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[rgb(190,137,41)]/10 flex items-center justify-center text-[rgb(190,137,41)] shrink-0">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-[rgb(100,98,92)]">Horario de atención</p>
-                    <p className="text-[rgb(45,45,42)] text-base">{t('contact.info.hours')}</p>
+                  <div>
+                    <p className="text-sm font-medium text-[rgb(100,98,92)]">{t('contact.info.hours_title')}</p>
+                    <p className="text-[rgb(45,45,42)]">{t('contact.info.hours')}</p>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-[rgb(190,137,41)]/20">
                   <p className="text-[rgb(45,45,42)] text-center">
-                    <span className="text-[rgb(190,137,41)] font-semibold">¿Listo para dar el siguiente paso?</span>
+                    <span className="text-[rgb(190,137,41)] font-semibold">{t('contact.info.callout_title')}</span>
                     <br />
-                    <span className="text-sm text-[rgb(100,98,92)]">No dude en contactarnos. Estamos para ayudarle a encontrar su hogar ideal.</span>
+                    <span className="text-sm text-[rgb(100,98,92)]">{t('contact.info.callout_subtitle')}</span>
                   </p>
                 </div>
               </div>
@@ -252,6 +280,44 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Floating Notification (Toast) */}
+      {(status === 'success' || status === 'error') && (
+        <div 
+          className={`fixed bottom-8 right-8 z-[100] flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl border transition-all duration-500 animate-in fade-in slide-in-from-bottom-5 ${
+            status === 'success' 
+              ? 'bg-white border-green-100 text-green-800' 
+              : 'bg-white border-red-100 text-red-800'
+          }`}
+        >
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+            status === 'success' ? 'bg-green-50' : 'bg-red-50'
+          }`}>
+            {status === 'success' ? (
+              <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <p className="font-bold text-sm">
+              {status === 'success' ? t('contact.form.success') : t('contact.form.error')}
+            </p>
+          </div>
+          <button 
+            onClick={() => setStatus('idle')}
+            className="ml-2 text-gray-400 hover:text-gray-600"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
     </section>
   );
 };

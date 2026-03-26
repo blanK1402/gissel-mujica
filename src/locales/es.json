@@ -18,9 +18,13 @@
   },
   "hero": {
     "title": "La llave de tu futuro está aquí y yo te ayudo a encontrarla",
-    "subtitle": "Agente inmobiliario certificado Realtor® en Florida. Te guío en cada paso: compra, venta e inversión de propiedades",
+    "subtitle": "Agente inmobiliario en Florida. Te guío en cada paso: compra, venta e inversión de propiedades",
     "cta_primary": "Comenzar Ahora",
-    "social_proof": "Certificada por Realtor® WRA"
+    "social_proof": "Tu guía en el mercado de Florida",
+    "services_badge_title": "Especialista en:",
+    "services_badge_1": "Compra",
+    "services_badge_2": "Venta",
+    "services_badge_3": "Inversión"
   },
   "services": {
     "title": "Servicios Inmobiliarios Profesionales",
@@ -41,9 +45,26 @@
   },
   "about": {
     "title": "Acerca de Gissel Mujica",
-    "bio": "Agente inmobiliaria certificada Realtor® WRA con experiencia personal en compra de vivienda. Mi misión es que cada cliente viva la experiencia inmobiliaria con confianza, guía profesional y acompañamiento personalizado.",
+    "bio": "Agente inmobiliaria con experiencia personal en compra de vivienda. Mi misión es que cada cliente viva la experiencia inmobiliaria con confianza, guía profesional y acompañamiento personalizado.",
     "values": "Confianza, educación y apoyo en cada decisión",
-    "certification": "Certificada por Realtor® WRA"
+    "certification": "Asesoría Inmobiliaria Profesional",
+    "badge_subtitle": "Servicio",
+    "badge_title": "Personalizado",
+    "story_badge": "Mi Historia",
+    "story_title_1": "Guiando tu camino hacia el",
+    "story_title_highlight": "hogar ideal",
+    "story_p1": "Mi misión es simple: que cada cliente experimente la compra, venta o inversión inmobiliaria con confianza, guía profesional y acompañamiento personalizado.",
+    "story_p2": "Vengo del lado del cliente, sé lo que significa encontrar la casa ideal y quiero hacer ese proceso lo más fluido, transparente y libre de estrés posible para ti. Me enorgullece ser un recurso educativo y un apoyo constante.",
+    "card1_title": "Confianza",
+    "card1_desc": "Basada en experiencia real, resultados comprobados y una comunicación siempre transparente.",
+    "card2_title": "Educación",
+    "card2_desc": "Te explico cada paso del proceso inmobiliario detalladamente para que tomes las mejores decisiones.",
+    "card3_title": "Apoyo",
+    "card3_desc": "Estoy a tu lado en cada decisión importante, defendiendo siempre tus intereses y objetivos.",
+    "callout_title": "¿Por qué es importante elegir a un profesional?",
+    "callout_desc": "Un agente inmobiliario no solo muestra casas. Negocia, informa, protege tus intereses y acompaña cada paso del proceso. Mi compromiso es con la excelencia profesional y brindarte la mejor experiencia inmobiliaria en Florida.",
+    "callout_badge": "Asesoría Inmobiliaria",
+    "callout_btn": "Contáctame Hoy"
   },
   "contact": {
     "title": "Contáctame",
@@ -61,13 +82,23 @@
       "service_other": "Otro",
       "message": "Mensaje",
       "submit": "Enviar Mensaje",
+      "sending": "Redirigiendo al correo...",
       "success": "¡Mensaje enviado exitosamente!",
-      "error": "Hubo un error. Por favor intenta de nuevo."
+      "error": "Hubo un error. Por favor intenta de nuevo.",
+      "default_msg_buy": "Hola Gissel, estoy interesado en comprar una propiedad en Florida. Me gustaría agendar una asesoría.",
+      "default_msg_sell": "Hola Gissel, quiero vender mi propiedad y me gustaría conocer el proceso y una valoración profesional.",
+      "default_msg_investment": "Hola Gissel, busco oportunidades de inversión inmobiliaria en Florida. ¿Podrías ayudarme?"
     },
     "info": {
       "title": "Información de Contacto",
-      "location": "Atención online en toda Florida",
+      "location_title": "Ubicación",
+      "location": "Florida, USA",
+      "contact_title": "Contacto",
+      "email_title": "Email",
+      "hours_title": "Horario de atención",
       "hours": "Lunes a Viernes, 9:00 AM - 6:00 PM",
+      "callout_title": "¿Listo para dar el siguiente paso?",
+      "callout_subtitle": "No dude en contactarnos. Estamos para ayudarle a encontrar su hogar ideal.",
       "response": "Respondo en menos de 24 horas"
     }
   },

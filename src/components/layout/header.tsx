@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../common';
 import logoImg from '@/assets/images/logo.jpeg';
 
 export const Header: React.FC = () => {
@@ -23,15 +22,17 @@ export const Header: React.FC = () => {
   return (
     <header className="fixed top-0 w-full bg-[rgb(229,229,223)]/90 backdrop-blur-md shadow-sm z-50 border-b border-[rgb(190,137,41)]/10">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3 group">
-          <img 
-            src={logoImg} 
-            alt="Gissel Mujica Realtor" 
-            className="w-10 h-10 rounded-xl shadow-md group-hover:shadow-lg transition-shadow object-cover"
-          />
+        <Link to="/" className="flex items-center space-x-3 transition-transform hover:scale-[1.02] duration-300">
+          <div className="bg-[rgb(240,239,233)] w-10 h-10 md:w-11 md:h-11 rounded-xl shadow-md border border-[rgb(190,137,41)]/20 p-1 overflow-hidden">
+            <img 
+              src={logoImg} 
+              alt="Gissel Mujica Realtor" 
+              className="w-full h-full object-contain"
+            />
+          </div>
           <div className="hidden sm:block">
-            <p className="text-sm font-bold text-[rgb(45,45,42)]">GISSEL MUJICA</p>
-            <p className="text-xs text-[rgb(190,137,41)] font-medium">Realtor® WRA</p>
+            <p className="text-sm font-black text-[rgb(45,45,42)] leading-tight tracking-tight">GISSEL MUJICA</p>
+            <p className="text-[10px] text-[rgb(190,137,41)] font-bold uppercase tracking-[0.2em] -mt-0.5">Realtor® Florida</p>
           </div>
         </Link>
 
@@ -55,11 +56,12 @@ export const Header: React.FC = () => {
             {i18n.language === 'es' ? 'EN' : 'ES'}
           </button>
 
-          <a href={`tel:${import.meta.env.VITE_PHONE_NUMBER}`} className="hidden md:block">
-            <Button size="md" variant="primary">
-              {t('header.cta')}
-            </Button>
-          </a>
+          <Link 
+            to="/contacto" 
+            className="hidden md:flex items-center justify-center font-semibold transition-all duration-300 rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] bg-[rgb(190,137,41)] text-white hover:bg-[rgb(160,115,30)] px-6 py-2.5 text-sm"
+          >
+            {t('header.cta')}
+          </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -83,11 +85,13 @@ export const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
-            <a href={`tel:${import.meta.env.VITE_PHONE_NUMBER}`} className="pt-2">
-              <Button size="md" variant="primary" className="w-full">
-                {t('header.cta')}
-              </Button>
-            </a>
+            <Link 
+              to="/contacto" 
+              className="mt-2 flex items-center justify-center font-semibold transition-all duration-300 rounded-xl bg-[rgb(190,137,41)] text-white hover:bg-[rgb(160,115,30)] py-4 text-base w-full shadow-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('header.cta')}
+            </Link>
           </nav>
         </div>
       )}

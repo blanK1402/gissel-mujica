@@ -3,16 +3,13 @@ import { useTranslation } from "react-i18next"
 
 import LogoMarketing from "@/assets/logo-marketing.jpeg"
 import logoImg from "@/assets/images/logo.jpeg"
+import { CONTACT_INFO } from "@/config/constants"
 
 export function Footer() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const year = new Date().getFullYear()
-  const phone = import.meta.env.VITE_PHONE_NUMBER
-  const email = import.meta.env.VITE_EMAIL
-  const instagram = import.meta.env.VITE_INSTAGRAM_URL
-  const facebook = import.meta.env.VITE_FACEBOOK_URL
-  const whatsapp = import.meta.env.VITE_WHATSAPP_NUMBER
+  const { PHONE_DISPLAY, PHONE_CALL, EMAIL, SOCIAL, WHATSAPP_URL, AGENCY_URL } = CONTACT_INFO;
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -30,17 +27,19 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <img 
-                src={logoImg} 
-                alt="Gissel Mujica" 
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-cover"
-              />
+            <Link to="/" className="flex items-center gap-3 mb-6 transition-transform hover:scale-[1.02] duration-300">
+              <div className="bg-[rgb(240,239,233)] w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-lg border border-[rgb(190,137,41)]/20 p-1.5 overflow-hidden transition-all">
+                <img 
+                  src={logoImg} 
+                  alt="Gissel Mujica" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div>
-                <span className="font-display font-bold text-base sm:text-lg text-white">
+                <span className="font-display font-black text-lg sm:text-xl text-white tracking-tight">
                   Gissel
                 </span>
-                <span className="block text-[10px] sm:text-xs text-[rgb(190,137,41)] font-medium">
+                <span className="block text-xs text-[rgb(190,137,41)] font-bold font-display uppercase tracking-[0.3em] -mt-1">
                   Mujica
                 </span>
               </div>
@@ -50,7 +49,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href={instagram}
+                href={SOCIAL.INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[rgb(60,60,55)] hover:bg-[rgb(190,137,41)]/20 flex items-center justify-center transition-colors"
@@ -61,7 +60,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href={facebook}
+                href={SOCIAL.FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[rgb(60,60,55)] hover:bg-[rgb(190,137,41)]/20 flex items-center justify-center transition-colors"
@@ -72,7 +71,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href={`https://wa.me/${whatsapp?.replace(/[^\d]/g, '')}`}
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[rgb(60,60,55)] hover:bg-[rgb(190,137,41)]/20 flex items-center justify-center transition-colors"
@@ -141,10 +140,10 @@ export function Footer() {
             </ul>
             <div className="mt-4 sm:mt-6 pt-4 border-t border-[rgb(60,60,55)]">
               <p className="text-[rgb(180,178,172)] text-sm">
-                <a href={`tel:${phone}`} className="hover:text-[rgb(190,137,41)] transition-colors">{phone}</a>
+                <a href={PHONE_CALL} className="hover:text-[rgb(190,137,41)] transition-colors">{PHONE_DISPLAY}</a>
               </p>
               <p className="text-[rgb(180,178,172)] text-sm mt-1 break-all">
-                <a href={`mailto:${email}`} className="hover:text-[rgb(190,137,41)] transition-colors">{email}</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-[rgb(190,137,41)] transition-colors">{EMAIL}</a>
               </p>
             </div>
           </div>
@@ -153,7 +152,7 @@ export function Footer() {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[rgb(60,60,55)] text-center">
           <div className="mb-6 flex justify-center">
             <a
-              href="https://crescendodigitalmarketingagency.com/en/"
+              href={AGENCY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2"

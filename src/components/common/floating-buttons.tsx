@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CONTACT_INFO } from '../../config/constants';
 
 export const FloatingButtons: React.FC = () => {
   const { t } = useTranslation();
@@ -19,18 +20,16 @@ export const FloatingButtons: React.FC = () => {
   };
 
   // Social links from env
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/[^\d]/g, '') || '';
-  const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL || '';
-  const facebookUrl = import.meta.env.VITE_FACEBOOK_URL || '';
+  const { SOCIAL, WHATSAPP_URL, WHATSAPP_DISPLAY } = CONTACT_INFO;
 
   return (
     <>
       {/* Social Media Buttons - Right side vertical */}
       <div className="fixed right-4 top-1/2 z-50 flex flex-col items-center gap-3 -translate-y-1/2 sm:right-6">
         {/* Instagram */}
-        {instagramUrl && (
+        {SOCIAL.INSTAGRAM && (
           <a
-            href={instagramUrl}
+            href={SOCIAL.INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
             className="group w-12 h-12 md:w-14 md:h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
@@ -45,9 +44,9 @@ export const FloatingButtons: React.FC = () => {
         )}
 
         {/* Facebook */}
-        {facebookUrl && (
+        {SOCIAL.FACEBOOK && (
           <a
-            href={facebookUrl}
+            href={SOCIAL.FACEBOOK}
             target="_blank"
             rel="noopener noreferrer"
             className="group w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
@@ -59,11 +58,29 @@ export const FloatingButtons: React.FC = () => {
             </svg>
           </a>
         )}
+        
+        {/* Google */}
+        {SOCIAL.GOOGLE && (
+          <a
+            href={SOCIAL.GOOGLE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border border-gray-100 p-2.5 md:p-3"
+            aria-label="Google"
+            title="Google"
+          >
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
+              alt="Google" 
+              className="w-full h-full object-contain"
+            />
+          </a>
+        )}
 
         {/* WhatsApp */}
-        {whatsappNumber && (
+        {WHATSAPP_DISPLAY && (
           <a
-            href={`https://wa.me/${whatsappNumber}`}
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"

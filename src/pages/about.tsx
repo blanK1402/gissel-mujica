@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { SEOHead } from '../components/common';
 import mujicaPhoto from '../assets/images/es-mujicaphoto.jpeg';
+import logoImg from '../assets/images/logo.jpeg';
 
 export const AboutPage: React.FC = () => {
   const { t } = useTranslation();
@@ -9,8 +10,8 @@ export const AboutPage: React.FC = () => {
     <>
       <SEOHead
         title="Acerca de Gissel Mujica"
-        description="Conoce a Gissel Mujica, Realtor® certificada en Florida con experiencia personal en compra de vivienda. Enfoque educativo y acompañamiento profesional."
-        keywords="gissel mujica realtor, agente inmobiliario florida, realtor certificada"
+        description="Conoce a Gissel Mujica, agente inmobiliario en Florida con enfoque educativo y acompañamiento profesional."
+        keywords="gissel mujica, agente inmobiliario florida, asesor inmobiliario"
       />
       
       {/* Hero Section */}
@@ -49,15 +50,13 @@ export const AboutPage: React.FC = () => {
               </div>
 
               {/* Badge Overlay */}
-              <div className="absolute -bottom-6 -right-4 sm:-right-8 bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] z-20 flex items-center gap-3 sm:gap-4 border border-white/50 hover:-translate-y-2 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-full bg-[rgb(190,137,41)]/10 flex items-center justify-center text-[rgb(190,137,41)]">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                  </svg>
+              <div className="absolute -bottom-6 -right-4 sm:-right-8 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl z-20 flex items-center gap-4 border border-white/50 hover:-translate-y-2 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[rgb(240,239,233)] border border-[rgb(190,137,41)]/20 p-1.5 flex items-center justify-center overflow-hidden">
+                   <img src={logoImg} alt="Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <p className="text-[10px] sm:text-xs text-[rgb(100,98,92)] font-bold uppercase tracking-widest mb-0.5">Certificada</p>
-                  <p className="font-extrabold text-[rgb(45,45,42)] text-sm sm:text-base">Realtor® WRA</p>
+                  <p className="text-[10px] sm:text-xs text-[rgb(190,137,41)] font-bold uppercase tracking-widest mb-0.5">{t('about.badge_subtitle')}</p>
+                  <p className="font-extrabold text-[rgb(45,45,42)] text-sm sm:text-base">{t('about.badge_title')}</p>
                 </div>
               </div>
             </div>
@@ -66,11 +65,11 @@ export const AboutPage: React.FC = () => {
             <div className="w-full lg:w-7/12 space-y-8 mt-12 lg:mt-0">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[rgb(190,137,41)]/10 rounded-full border border-[rgb(190,137,41)]/20">
                 <span className="w-2 h-2 rounded-full bg-[rgb(190,137,41)]"></span>
-                <span className="text-[rgb(190,137,41)] font-bold tracking-wider uppercase text-xs">Mi Historia</span>
+                <span className="text-[rgb(190,137,41)] font-bold tracking-wider uppercase text-xs">{t('about.story_badge')}</span>
               </div>
               
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[rgb(45,45,42)] leading-tight">
-                Guiando tu camino hacia el <span className="text-[rgb(190,137,41)]">hogar ideal</span>
+                {t('about.story_title_1')} <span className="text-[rgb(190,137,41)]">{t('about.story_title_highlight')}</span>
               </h2>
               
               <div className="prose prose-lg text-[rgb(100,98,92)] max-w-none">
@@ -81,10 +80,10 @@ export const AboutPage: React.FC = () => {
                 <div className="w-full h-px bg-gradient-to-r from-[rgb(190,137,41)]/30 via-[rgb(190,137,41)]/10 to-transparent my-8"></div>
                 
                 <p className="leading-relaxed text-lg">
-                  Mi misión es simple: que cada cliente experimente la compra, venta o inversión inmobiliaria con confianza, guía profesional y acompañamiento personalizado. 
+                  {t('about.story_p1')}
                 </p>
                 <p className="leading-relaxed text-lg mt-4">
-                  Vengo del lado del cliente, sé lo que significa encontrar la casa ideal y quiero hacer ese proceso lo más fluido, transparente y libre de estrés posible para ti. Me enorgullece ser un recurso educativo y un apoyo constante.
+                  {t('about.story_p2')}
                 </p>
               </div>
             </div>
@@ -97,24 +96,24 @@ export const AboutPage: React.FC = () => {
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[rgb(190,137,41)] to-[rgb(160,110,30)] flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                 <span className="text-3xl text-white">🤝</span>
               </div>
-              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">Confianza</h3>
-              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">Basada en experiencia real, resultados comprobados y una comunicación siempre transparente.</p>
+              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">{t('about.card1_title')}</h3>
+              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">{t('about.card1_desc')}</p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm p-8 lg:p-10 rounded-[2rem] border border-[rgb(229,229,223)] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-300 group">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[rgb(190,137,41)] to-[rgb(160,110,30)] flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                 <span className="text-3xl text-white">📚</span>
               </div>
-              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">Educación</h3>
-              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">Te explico cada paso del proceso inmobiliario detalladamente para que tomes las mejores decisiones.</p>
+              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">{t('about.card2_title')}</h3>
+              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">{t('about.card2_desc')}</p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm p-8 lg:p-10 rounded-[2rem] border border-[rgb(229,229,223)] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-300 group">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[rgb(190,137,41)] to-[rgb(160,110,30)] flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                 <span className="text-3xl text-white">💪</span>
               </div>
-              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">Apoyo</h3>
-              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">Estoy a tu lado en cada decisión importante, defendiendo siempre tus intereses y objetivos.</p>
+              <h3 className="text-2xl font-bold text-[rgb(45,45,42)] mb-3">{t('about.card3_title')}</h3>
+              <p className="text-[rgb(100,98,92)] leading-relaxed text-lg">{t('about.card3_desc')}</p>
             </div>
           </div>
 
@@ -123,21 +122,21 @@ export const AboutPage: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[rgb(190,137,41)]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             
             <div className="relative z-10 w-full md:w-2/3">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">¿Por qué es importante elegir a un Realtor®?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">{t('about.callout_title')}</h2>
               <p className="text-gray-300 leading-relaxed text-lg mb-8">
-                Un agente inmobiliario certificado no solo muestra casas. Negocia, informa, protege tus intereses y acompaña cada paso del proceso. La certificación Realtor® WRA es mi compromiso con la excelencia profesional y la más estricta ética inmobiliaria internacional.
+                {t('about.callout_desc')}
               </p>
               <div className="inline-flex items-center gap-3 text-[rgb(190,137,41)] font-semibold text-lg bg-white/5 px-6 py-4 rounded-xl border border-white/10 shadow-lg backdrop-blur-md">
                 <svg className="w-7 h-7 text-[rgb(190,137,41)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
-                Certificada por Realtor® WRA
+                {t('about.callout_badge')}
               </div>
             </div>
             
             <div className="relative z-10 w-full md:w-1/3 flex justify-center md:justify-end">
                <a href="#/contacto" className="inline-flex items-center justify-center w-full md:w-auto px-8 py-5 bg-[rgb(190,137,41)] text-white text-lg rounded-xl hover:bg-[rgb(160,110,30)] transition-all duration-300 font-bold shadow-[0_10px_20px_-10px_rgba(190,137,41,0.5)] hover:shadow-[0_20px_30px_-15px_rgba(190,137,41,0.6)] hover:-translate-y-1 text-center">
-                  Contáctame Hoy
+                  {t('about.callout_btn')}
                </a>
             </div>
           </div>
