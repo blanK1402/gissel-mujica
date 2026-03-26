@@ -7,7 +7,7 @@ import { generateSitemap } from "./src/utils/sitemap";
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = dirname(__filename);
 export default defineConfig({
-    base: '/',
+    base: './',
     plugins: [
         react(),
         tailwindcss(),
