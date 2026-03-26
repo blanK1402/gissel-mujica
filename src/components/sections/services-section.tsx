@@ -48,6 +48,7 @@ export const ServicesSection: React.FC = () => {
             return (
               <div
                 key={service.key}
+                id={service.key}
                 className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12 lg:gap-16`}
               >
                 {/* Imagen */}

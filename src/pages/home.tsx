@@ -14,7 +14,7 @@ export const HomePage: React.FC = () => {
       <HeroSection />
       <ServicesSection />
       <FAQSection />
-      <ContactSection />
+      <ContactSection isHomePage={true} />
     </>
   );
 };

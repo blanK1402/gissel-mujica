@@ -3,9 +3,9 @@ export var generateSitemap = function () {
     var today = new Date().toISOString().split('T')[0];
     var urls = [
         { loc: baseUrl, priority: '1.0', changefreq: 'yearly' },
-        { loc: "".concat(baseUrl, "/servicios"), priority: '0.9', changefreq: 'yearly' },
-        { loc: "".concat(baseUrl, "/nosotros"), priority: '0.8', changefreq: 'yearly' },
-        { loc: "".concat(baseUrl, "/contacto"), priority: '0.8', changefreq: 'monthly' },
+        { loc: "".concat(baseUrl, "/services"), priority: '0.9', changefreq: 'yearly' },
+        { loc: "".concat(baseUrl, "/about"), priority: '0.8', changefreq: 'yearly' },
+        { loc: "".concat(baseUrl, "/contact"), priority: '0.8', changefreq: 'monthly' },
         { loc: "".concat(baseUrl, "/faq"), priority: '0.8', changefreq: 'yearly' },
     ];
     var sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n".concat(urls

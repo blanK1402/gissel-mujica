@@ -7,13 +7,20 @@ export const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
   };
 
+  const servicesLinks = [
+    { label: t('services.buying.title'), path: '/services#buying' },
+    { label: t('services.selling.title'), path: '/services#selling' },
+    { label: t('services.investment.title'), path: '/services#investment' },
+  ];
+
   const menuItems = [
     { label: t('common.home'), path: '/' },
-    { label: t('common.services'), path: '/services' },
+    { label: t('common.services'), path: '/services', hasDropdown: true },
     { label: t('common.about'), path: '/about' },
     { label: t('common.faq'), path: '/faq' },
     { label: t('common.contact'), path: '/contact' },
@@ -38,13 +45,40 @@ export const Header: React.FC = () => {
 
         <nav className="hidden md:flex items-center space-x-8">
           {menuItems.map((item) => (
-            <Link
+            <div
               key={item.path}
-              to={item.path}
-              className="text-[rgb(45,45,42)] hover:text-[rgb(190,137,41)] transition-colors font-medium text-sm relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[rgb(190,137,41)] hover:after:w-full after:transition-all after:duration-300"
+              className="relative group"
+              onMouseEnter={() => item.hasDropdown && setIsServicesOpen(true)}
+              onMouseLeave={() => item.hasDropdown && setIsServicesOpen(false)}
             >
-              {item.label}
-            </Link>
+              <Link
+                to={item.path}
+                className="text-[rgb(45,45,42)] hover:text-[rgb(190,137,41)] transition-colors font-semibold text-sm relative py-2"
+                onClick={() => item.hasDropdown && setIsServicesOpen(!isServicesOpen)}
+              >
+                {item.label}
+                {item.hasDropdown && (
+                  <span className={`ml-1 inline-block transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}>▾</span>
+                )}
+              </Link>
+              
+              {item.hasDropdown && isServicesOpen && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-[rgb(240,239,233)] rounded-xl shadow-xl border border-[rgb(190,137,41)]/10 py-3 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="flex flex-col">
+                    {servicesLinks.map((sub) => (
+                      <Link
+                        key={sub.path}
+                        to={sub.path}
+                        className="px-5 py-3 text-sm font-medium text-[rgb(45,45,42)] hover:bg-[rgb(190,137,41)]/10 hover:text-[rgb(190,137,41)] transition-all"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
