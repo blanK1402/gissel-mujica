@@ -27,7 +27,7 @@ const FaqItem: React.FC<{
         </span>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-        <div className="p-4 sm:p-6 pt-0 text-[rgb(100,98,92)] leading-relaxed text-sm sm:text-base">
+        <div className="p-4 sm:p-6 pt-0 text-[rgb(100,98,92)] leading-relaxed text-sm sm:text-base whitespace-pre-line">
           {answer}
         </div>
       </div>
