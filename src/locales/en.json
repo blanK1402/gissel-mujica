@@ -1,0 +1,110 @@
+{
+  "common": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "cta_button": "Quote Now",
+    "call_button": "Call",
+    "read_more": "Learn More",
+    "close": "Close",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "header": {
+    "tagline": "Your future key is here",
+    "cta": "Schedule Appointment"
+  },
+  "hero": {
+    "title": "Opening doors to your future. One step closer to home",
+    "subtitle": "Certified Realtor® in Florida. I guide you in every step: buying, selling, and investing in properties",
+    "cta_primary": "Get Started",
+    "social_proof": "Certified by Realtor® WRA"
+  },
+  "services": {
+    "title": "Professional Real Estate Services",
+    "subtitle": "Complete solutions for your property needs in Florida",
+    "cta": "Request information",
+    "buying": {
+      "title": "Property Purchase",
+      "description": "Complete assistance to find your ideal home with expert negotiation, document management and personalized guidance"
+    },
+    "selling": {
+      "title": "Property Sale",
+      "description": "Sell your property with confidence. Expert negotiation, market positioning and complete paperwork handling"
+    },
+    "investment": {
+      "title": "Investment Advisory",
+      "description": "Professional guidance for real estate investment in Florida. Opportunity analysis and investment strategies"
+    }
+  },
+  "about": {
+    "title": "About Gissel Mujica",
+    "bio": "Certified Realtor® WRA agent with personal home buying experience. My mission is that each client experiences the real estate journey with confidence, professional guidance and personalized support.",
+    "values": "Trust, education and support in every decision",
+    "certification": "Certified by Realtor® WRA"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready for your next real estate step? Send me a message and I'll help you",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "service": "Service Type",
+      "service_buy": "Buy property",
+      "service_sell": "Sell property",
+      "service_investment": "Real estate investment",
+      "service_info": "General information",
+      "service_advice": "Financial advice",
+      "service_other": "Other",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "location": "Online service throughout Florida",
+      "hours": "Monday to Friday, 9:00 AM - 6:00 PM",
+      "response": "I respond within 24 hours"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "q1": {
+        "title": "Why choose a Realtor®?",
+        "answer": "A real estate agent does much more than show houses: they negotiate, inform, and guide you through the entire process. Let me make your real estate experience smooth and stress-free."
+      },
+      "q2": {
+        "title": "How can a real estate agent help you?",
+        "answer": "I help find a place that fits your budget, needs and timeline. I accompany you through the process, explain each step, and help you apply correctly to increase your opportunities."
+      },
+      "q3": {
+        "title": "What are the steps to get started?",
+        "answer": "1) Get pre-approval, 2) Maintain good credit history, 3) Save some funds to start, 4) Call me to begin. It's simpler than you think."
+      },
+      "q4": {
+        "title": "Why should I buy in Florida?",
+        "answer": "Wealth building: every payment is an investment in your future. Stability: you're not dependent on rental prices. Tax benefits: deductible. Freedom to customize: it's your space."
+      }
+    }
+  },
+  "footer": {
+    "about": "Certified real estate agent in Florida. I guide you in buying, selling and investing in properties.",
+    "quick_links": "Quick Links",
+    "services_menu": "Services",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "copyright": "© 2025 Gissel Mujica. All rights reserved."
+  },
+  "floating": {
+    "whatsapp": "Contact via WhatsApp",
+    "instagram": "Follow on Instagram",
+    "facebook": "Follow on Facebook",
+    "scroll_top": "Back to top"
+  }
+}

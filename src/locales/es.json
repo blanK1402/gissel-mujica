@@ -1,0 +1,110 @@
+{
+  "common": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "faq": "Preguntas Frecuentes",
+    "cta_button": "Cotizar Ahora",
+    "call_button": "Llamar",
+    "read_more": "Leer más",
+    "close": "Cerrar",
+    "menu": "Menú",
+    "language": "Idioma"
+  },
+  "header": {
+    "tagline": "La llave de tu futuro está aquí",
+    "cta": "Agendar Cita"
+  },
+  "hero": {
+    "title": "La llave de tu futuro está aquí y yo te ayudo a encontrarla",
+    "subtitle": "Agente inmobiliario certificado Realtor® en Florida. Te guío en cada paso: compra, venta e inversión de propiedades",
+    "cta_primary": "Comenzar Ahora",
+    "social_proof": "Certificada por Realtor® WRA"
+  },
+  "services": {
+    "title": "Servicios Inmobiliarios Profesionales",
+    "subtitle": "Soluciones completas para tus necesidades de propiedad en Florida",
+    "cta": "Solicitar información",
+    "buying": {
+      "title": "Compra de Propiedades",
+      "description": "Ayuda completa para encontrar tu casa ideal con negociación experta, gestión de documentación y guía personalizada en todo el proceso"
+    },
+    "selling": {
+      "title": "Venta de Propiedades",
+      "description": "Vende tu propiedad con confianza. Negociación experta, posicionamiento en mercado y manejo completo de trámites"
+    },
+    "investment": {
+      "title": "Asesoramiento de Inversión",
+      "description": "Orientación profesional para invertir en bienes raíces en Florida. Análisis de oportunidades y estrategias de inversión"
+    }
+  },
+  "about": {
+    "title": "Acerca de Gissel Mujica",
+    "bio": "Agente inmobiliaria certificada Realtor® WRA con experiencia personal en compra de vivienda. Mi misión es que cada cliente viva la experiencia inmobiliaria con confianza, guía profesional y acompañamiento personalizado.",
+    "values": "Confianza, educación y apoyo en cada decisión",
+    "certification": "Certificada por Realtor® WRA"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¿Listo para tu próximo paso inmobiliario? Escríbeme y te ayudaré",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "service": "Tipo de servicio",
+      "service_buy": "Comprar propiedad",
+      "service_sell": "Vender propiedad",
+      "service_investment": "Inversión inmobiliaria",
+      "service_info": "Información general",
+      "service_advice": "Asesoramiento financiero",
+      "service_other": "Otro",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Hubo un error. Por favor intenta de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "location": "Atención online en toda Florida",
+      "hours": "Lunes a Viernes, 9:00 AM - 6:00 PM",
+      "response": "Respondo en menos de 24 horas"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "q1": {
+        "title": "¿Por qué escoger a un Realtor®?",
+        "answer": "Un agente inmobiliario hace mucho más que enseñar casas: negocia, informa y acompaña a los compradores en todo el proceso. Permítame hacer de tu experiencia inmobiliaria algo fluido y sin estrés."
+      },
+      "q2": {
+        "title": "¿En qué puede ayudarte un agente inmobiliario?",
+        "answer": "Ayudo a encontrar un lugar que se ajuste a tu presupuesto, tus necesidades y tu tiempo. Te acompaño en el proceso, te explico cada paso y te ayudo a aplicar correctamente para aumentar tus oportunidades."
+      },
+      "q3": {
+        "title": "¿Cuáles son los pasos para empezar?",
+        "answer": "1) Obtener una pre-aprobación, 2) Mantener buen historial de crédito, 3) Ahorrar un poco para iniciar, 4) Llamarme para comenzar. Es más simple de lo que parece."
+      },
+      "q4": {
+        "title": "¿Por qué debería comprar en Florida?",
+        "answer": "Acumulación de patrimonio: cada pago es inversión en tu futuro. Estabilidad: no dependes de precios de alquiler. Beneficios fiscales: deducibles. Libertad para personalizar: es tu espacio."
+      }
+    }
+  },
+  "footer": {
+    "about": "Agente inmobiliario certificado en Florida. Te guío en compra, venta e inversión de propiedades.",
+    "quick_links": "Enlaces Rápidos",
+    "services_menu": "Servicios",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "copyright": "© 2025 Gissel Mujica. Todos los derechos reservados."
+  },
+  "floating": {
+    "whatsapp": "Contactar por WhatsApp",
+    "instagram": "Seguir en Instagram",
+    "facebook": "Seguir en Facebook",
+    "scroll_top": "Volver arriba"
+  }
+}

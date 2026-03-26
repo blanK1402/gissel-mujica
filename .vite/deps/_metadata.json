@@ -1,0 +1,61 @@
+{
+  "hash": "5b3a8eef",
+  "configHash": "9806ccec",
+  "lockfileHash": "f12cb074",
+  "browserHash": "ce57155c",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "f95dd3aa",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "3e0836fa",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "a47dc287",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@7.13.2_rea_5bd9a30f123842d413e644ab2969a585/node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "6bd151b2",
+      "needsInterop": false
+    },
+    "react-helmet-async": {
+      "src": "../../node_modules/.pnpm/react-helmet-async@2.0.5_react@18.3.1/node_modules/react-helmet-async/lib/index.esm.js",
+      "file": "react-helmet-async.js",
+      "fileHash": "c94d556b",
+      "needsInterop": false
+    },
+    "i18next": {
+      "src": "../../node_modules/.pnpm/i18next@24.2.3_typescript@5.6.3/node_modules/i18next/dist/esm/i18next.js",
+      "file": "i18next.js",
+      "fileHash": "eb6f9786",
+      "needsInterop": false
+    },
+    "react-i18next": {
+      "src": "../../node_modules/.pnpm/react-i18next@15.7.4_i18nex_a703f25a6b6e52db8dac54a2aeeb23b7/node_modules/react-i18next/dist/es/index.js",
+      "file": "react-i18next.js",
+      "fileHash": "bd7bc68d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-FHNO6XH6": {
+      "file": "chunk-FHNO6XH6.js"
+    },
+    "chunk-SJG7264W": {
+      "file": "chunk-SJG7264W.js"
+    },
+    "chunk-EQCVQC35": {
+      "file": "chunk-EQCVQC35.js"
+    }
+  }
+}

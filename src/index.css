@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: 229, 229, 223;
+  --color-bg-light: 240, 239, 233;
+  --color-accent: 190, 137, 41;
+  --color-accent-light: 210, 160, 70;
+  --color-accent-dark: 160, 115, 30;
+  --color-text-dark: 45, 45, 42;
+  --color-text-muted: 100, 98, 92;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text-dark));
+}
+
+a {
+  transition-property: color;
+  transition-duration: 200ms;
+}
+
