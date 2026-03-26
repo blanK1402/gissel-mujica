@@ -137,6 +137,11 @@ export function Footer() {
                   {t("footer.terms")}
                 </a>
               </li>
+              <li>
+                <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
+                  {t("footer.sitemap")}
+                </a>
+              </li>
             </ul>
             <div className="mt-4 sm:mt-6 pt-4 border-t border-[rgb(60,60,55)]">
               <p className="text-[rgb(180,178,172)] text-sm">
