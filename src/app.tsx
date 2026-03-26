@@ -16,9 +16,9 @@ function AppContent() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/servicios" element={<ServicesPage />} />
-        <Route path="/nosotros" element={<AboutPage />} />
-        <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
       </Routes>
       <FloatingButtons />

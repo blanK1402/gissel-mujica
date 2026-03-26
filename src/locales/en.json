@@ -17,10 +17,14 @@
     "cta": "Schedule Appointment"
   },
   "hero": {
-    "title": "Opening doors to your future. One step closer to home",
-    "subtitle": "Real estate agent in Florida. I guide you in every step: buying, selling, and investing in properties",
+    "greeting": "Hi, I'm Gissel Mujica",
+    "role": "Your trusted Realtor",
+    "title_1": "I'm with you",
+    "title_2": "every step of the way",
+    "subtitle": "Finding your dream home is more than a transaction. I'm here to guide you, explain every detail, and make this process a safe and trustworthy experience.",
+    "cta": "Let's Talk",
+    "social_proof": "More than 50 families have found their home with my help",
     "cta_primary": "Get Started",
-    "social_proof": "Your guide in the Florida market",
     "services_badge_title": "Specialist in:",
     "services_badge_1": "Buying",
     "services_badge_2": "Selling",
@@ -81,6 +85,8 @@
       "service_advice": "Financial advice",
       "service_other": "Other",
       "message": "Message",
+      "name_placeholder": "John Doe",
+      "message_placeholder": "Tell me how I can help you...",
       "submit": "Send Message",
       "sending": "Redirecting to email...",
       "success": "Message sent successfully!",
@@ -137,5 +143,18 @@
     "instagram": "Follow on Instagram",
     "facebook": "Follow on Facebook",
     "scroll_top": "Back to top"
+  },
+  "seo": {
+    "home_title": "GISSEL MUJICA | Realtor® in Florida",
+    "home_desc": "Bilingual real estate agent in Florida. I help you buy, sell and invest in properties with professional guidance. Your ideal home awaits!",
+    "home_keywords": "realtor florida, buy sell houses florida, bilingual real estate agent, buy house florida, sell property florida, real estate investment florida",
+    "services_title": "Professional Real Estate Services",
+    "services_desc": "Buying, selling and investment advice in Florida. Personalized guidance for your real estate success.",
+    "about_title": "About Gissel Mujica | Your Real Estate Ally",
+    "about_desc": "Learn more about Gissel Mujica, a Florida Realtor® committed to your peace of mind and success in the real estate market.",
+    "contact_title": "Contact Gissel Mujica | Realtor® Florida",
+    "contact_desc": "Ready for your next real estate step? Consult with Gissel Mujica today for expert guidance in Florida property market.",
+    "faq_title": "Frequently Asked Questions | Real Estate Florida",
+    "faq_desc": "Answers to common questions about buying, selling and investing in the Florida real estate market."
   }
 }

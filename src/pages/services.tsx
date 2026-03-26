@@ -8,9 +8,9 @@ export const ServicesPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Servicios Inmobiliarios en Florida"
-        description="Servicios profesionales de compra, venta e inversión de propiedades en Florida. Asesoramiento experto de Realtor® certificada."
-        keywords="servicios inmobiliarios florida, comprar vender casa, inversión propiedad"
+        title={t('seo.services_title')}
+        description={t('seo.services_desc')}
+        keywords={t('seo.home_keywords')}
       />
       <section className="bg-[rgb(229,229,223)] pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">

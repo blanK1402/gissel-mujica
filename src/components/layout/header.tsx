@@ -13,10 +13,10 @@ export const Header: React.FC = () => {
 
   const menuItems = [
     { label: t('common.home'), path: '/' },
-    { label: t('common.services'), path: '/servicios' },
-    { label: t('common.about'), path: '/nosotros' },
+    { label: t('common.services'), path: '/services' },
+    { label: t('common.about'), path: '/about' },
     { label: t('common.faq'), path: '/faq' },
-    { label: t('common.contact'), path: '/contacto' },
+    { label: t('common.contact'), path: '/contact' },
   ];
 
   return (
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
           </button>
 
           <Link 
-            to="/contacto" 
+            to="/contact" 
             className="hidden md:flex items-center justify-center font-semibold transition-all duration-300 rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] bg-[rgb(190,137,41)] text-white hover:bg-[rgb(160,115,30)] px-6 py-2.5 text-sm"
           >
             {t('header.cta')}
@@ -86,7 +86,7 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             <Link 
-              to="/contacto" 
+              to="/contact" 
               className="mt-2 flex items-center justify-center font-semibold transition-all duration-300 rounded-xl bg-[rgb(190,137,41)] text-white hover:bg-[rgb(160,115,30)] py-4 text-base w-full shadow-md"
               onClick={() => setIsMenuOpen(false)}
             >

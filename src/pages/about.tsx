@@ -9,9 +9,9 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Acerca de Gissel Mujica"
-        description="Conoce a Gissel Mujica, agente inmobiliario en Florida con enfoque educativo y acompañamiento profesional."
-        keywords="gissel mujica, agente inmobiliario florida, asesor inmobiliario"
+        title={t('seo.about_title')}
+        description={t('seo.about_desc')}
+        keywords={t('seo.home_keywords')}
       />
       
       {/* Hero Section */}
@@ -135,7 +135,7 @@ export const AboutPage: React.FC = () => {
             </div>
             
             <div className="relative z-10 w-full md:w-1/3 flex justify-center md:justify-end">
-               <a href="#/contacto" className="inline-flex items-center justify-center w-full md:w-auto px-8 py-5 bg-[rgb(190,137,41)] text-white text-lg rounded-xl hover:bg-[rgb(160,110,30)] transition-all duration-300 font-bold shadow-[0_10px_20px_-10px_rgba(190,137,41,0.5)] hover:shadow-[0_20px_30px_-15px_rgba(190,137,41,0.6)] hover:-translate-y-1 text-center">
+               <a href="#/contact" className="inline-flex items-center justify-center w-full md:w-auto px-8 py-5 bg-[rgb(190,137,41)] text-white text-lg rounded-xl hover:bg-[rgb(160,110,30)] transition-all duration-300 font-bold shadow-[0_10px_20px_-10px_rgba(190,137,41,0.5)] hover:shadow-[0_20px_30px_-15px_rgba(190,137,41,0.6)] hover:-translate-y-1 text-center">
                   {t('about.callout_btn')}
                </a>
             </div>

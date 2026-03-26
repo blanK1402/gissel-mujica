@@ -11,26 +11,6 @@ export const HeroSection: React.FC = () => {
   const isSpanish = i18n.language === 'es';
   const gisselPhoto = isSpanish ? gisselPhotoEs : gisselPhotoEn;
 
-  const heroMessages = isSpanish
-    ? {
-        greeting: "Hola, soy Gissel Mujica",
-        role: "Tu Realtor de confianza",
-        title_1: "Te acompaño",
-        title_2: "en todo el proceso",
-        subtitle: "Encontrar tu hogar ideal es más que una transacción. Estoy aquí para guiarte, explicarte cada detalle y hacer de este proceso una experiencia segura y confiable.",
-        cta: "Hablemos",
-        social_proof: "Más de 50 familias han encontrado su hogar con mi ayuda",
-      }
-    : {
-        greeting: "Hi, I'm Gissel Mujica",
-        role: "Your trusted Realtor",
-        title_1: "I'm with you",
-        title_2: "every step of the way",
-        subtitle: "Finding your dream home is more than a transaction. I'm here to guide you, explain every detail, and make this process a safe and trustworthy experience.",
-        cta: "Let's Talk",
-        social_proof: "More than 50 families have found their home with my help",
-      };
-
   return (
     <section className="relative w-full min-h-screen bg-white overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[rgb(190,137,41)] to-transparent"></div>
@@ -56,27 +36,27 @@ export const HeroSection: React.FC = () => {
             </div>
 
             <p className="text-[rgb(190,137,41)] font-medium mb-2 tracking-wide uppercase text-sm">
-              {heroMessages.role}
+              {t('hero.role')}
             </p>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[rgb(45,45,42)] mb-2 leading-tight">
-              <span className="block">{heroMessages.greeting}</span>
+              <span className="block">{t('hero.greeting')}</span>
             </h1>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[rgb(190,137,41)] mb-6 leading-tight">
-              {heroMessages.title_1} {heroMessages.title_2}
+              {t('hero.title_1')} {t('hero.title_2')}
             </h1>
 
             <p className="text-lg md:text-xl text-[rgb(100,98,92)] mb-8 leading-relaxed max-w-lg">
-              {heroMessages.subtitle}
+              {t('hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link 
-                to="/contacto" 
+                to="/contact" 
                 className="inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-xl shadow-lg hover:shadow-[rgb(190,137,41)]/40 active:scale-[0.98] bg-[rgb(190,137,41)] text-white hover:bg-[rgb(160,115,30)] px-10 py-4 text-lg w-full sm:w-auto"
               >
-                {heroMessages.cta}
+                {t('hero.cta')}
               </Link>
               <a 
                 href={CONTACT_INFO.WHATSAPP_URL} 
@@ -92,7 +72,7 @@ export const HeroSection: React.FC = () => {
               <span className="w-5 h-5 rounded-full bg-[rgb(190,137,41)]/20 flex items-center justify-center">
                 <span className="text-[rgb(190,137,41)] text-xs font-bold">✓</span>
               </span>
-              <span>{heroMessages.social_proof}</span>
+              <span>{t('hero.social_proof')}</span>
             </p>
           </div>
 

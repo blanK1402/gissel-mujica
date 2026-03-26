@@ -16,9 +16,9 @@ export const ServicesSection: React.FC = () => {
   ];
 
   const handleClick = (serviceKey: string) => {
-    navigate(`/contacto?service=${serviceKey}`);
+    navigate(`/contact?service=${serviceKey}`);
     setTimeout(() => {
-      const el = document.getElementById('contacto');
+      const el = document.getElementById('contact');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }

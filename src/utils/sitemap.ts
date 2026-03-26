@@ -4,9 +4,9 @@ export const generateSitemap = (): string => {
 
   const urls = [
     { loc: baseUrl, priority: '1.0', changefreq: 'yearly' },
-    { loc: `${baseUrl}/servicios`, priority: '0.9', changefreq: 'yearly' },
-    { loc: `${baseUrl}/nosotros`, priority: '0.8', changefreq: 'yearly' },
-    { loc: `${baseUrl}/contacto`, priority: '0.8', changefreq: 'monthly' },
+    { loc: `${baseUrl}/services`, priority: '0.9', changefreq: 'yearly' },
+    { loc: `${baseUrl}/about`, priority: '0.8', changefreq: 'yearly' },
+    { loc: `${baseUrl}/contact`, priority: '0.8', changefreq: 'monthly' },
     { loc: `${baseUrl}/faq`, priority: '0.8', changefreq: 'yearly' },
   ];
 

@@ -15,7 +15,7 @@ export function Footer() {
     e.preventDefault()
     navigate("/contact")
     setTimeout(() => {
-      const el = document.getElementById("contacto")
+      const el = document.getElementById("contact")
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" })
       }
@@ -89,9 +89,9 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               {[
                 { to: "/", label: t("common.home") },
-                { to: "/servicios", label: t("common.services") },
-                { to: "/nosotros", label: t("common.about") },
-                { to: "/contacto", label: t("common.contact") },
+                { to: "/services", label: t("common.services") },
+                { to: "/about", label: t("common.about") },
+                { to: "/contact", label: t("common.contact") },
                 { to: "/faq", label: t("common.faq") },
               ].map((link) => (
                 <li key={link.to}>
@@ -107,17 +107,17 @@ export function Footer() {
             <h3 className="font-semibold text-white mb-4 text-sm sm:text-base">{t("footer.services_menu")}</h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link to="/servicios" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
+                <Link to="/services" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
                   {t("services.buying.title")}
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
+                <Link to="/services" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
                   {t("services.selling.title")}
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
+                <Link to="/services" onClick={handleContactClick} className="text-[rgb(180,178,172)] hover:text-[rgb(190,137,41)] transition-colors text-sm">
                   {t("services.investment.title")}
                 </Link>
               </li>

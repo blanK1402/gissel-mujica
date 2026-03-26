@@ -1,13 +1,15 @@
 import { SEOHead } from '../components/common';
+import { useTranslation } from 'react-i18next';
 import { HeroSection, ServicesSection, FAQSection, ContactSection } from '../components/sections';
 
 export const HomePage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SEOHead
-        title="GISSEL MUJICA | Realtor® en Florida"
-        description="Agente inmobiliario bilingüe en Florida. Te ayudo a comprar, vender e invertir en propiedades con acompañamiento profesional. ¡Tu casa ideal te espera!"
-        keywords="realtor florida, compra venta casas florida, agente inmobiliario bilingüe, comprar casa florida, vender propiedad florida, inversión inmobiliaria florida"
+        title={t('seo.home_title')}
+        description={t('seo.home_desc')}
+        keywords={t('seo.home_keywords')}
       />
       <HeroSection />
       <ServicesSection />

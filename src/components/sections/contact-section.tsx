@@ -107,7 +107,7 @@ ${formData.message}
   };
 
   return (
-    <section id="contacto" className="relative w-full bg-[rgb(240,239,233)] py-20 md:py-32 overflow-hidden">
+    <section id="contact" className="relative w-full bg-[rgb(240,239,233)] py-20 md:py-32 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[rgb(190,137,41)]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[rgb(190,137,41)]/5 rounded-full blur-3xl"></div>
@@ -132,7 +132,7 @@ ${formData.message}
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Juan García"
+                placeholder={t('contact.form.name_placeholder')}
                 required
                 className="mt-2 w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[rgb(45,45,42)] outline-none transition-all focus:ring-2 focus:ring-[rgb(190,137,41)]/20 focus:border-[rgb(190,137,41)] placeholder-[rgb(150,148,142)]"
               />
@@ -193,7 +193,7 @@ ${formData.message}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Cuéntame en qué puedo ayudarte..."
+                placeholder={t('contact.form.message_placeholder')}
                 required
                 rows={4}
                 className="mt-2 w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[rgb(45,45,42)] outline-none transition-all focus:ring-2 focus:ring-[rgb(190,137,41)]/20 focus:border-[rgb(190,137,41)] placeholder-[rgb(150,148,142)] resize-none"

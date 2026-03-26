@@ -17,10 +17,14 @@
     "cta": "Agendar Cita"
   },
   "hero": {
-    "title": "La llave de tu futuro está aquí y yo te ayudo a encontrarla",
-    "subtitle": "Agente inmobiliario en Florida. Te guío en cada paso: compra, venta e inversión de propiedades",
+    "greeting": "Hola, soy Gissel Mujica",
+    "role": "Tu Realtor de confianza",
+    "title_1": "Te acompaño",
+    "title_2": "en todo el proceso",
+    "subtitle": "Encontrar tu hogar ideal es más que una transacción. Estoy aquí para guiarte, explicarte cada detalle y hacer de este proceso una experiencia segura y confiable.",
+    "cta": "Hablemos",
+    "social_proof": "Más de 50 familias han encontrado su hogar con mi ayuda",
     "cta_primary": "Comenzar Ahora",
-    "social_proof": "Tu guía en el mercado de Florida",
     "services_badge_title": "Especialista en:",
     "services_badge_1": "Compra",
     "services_badge_2": "Venta",
@@ -81,6 +85,8 @@
       "service_advice": "Asesoramiento financiero",
       "service_other": "Otro",
       "message": "Mensaje",
+      "name_placeholder": "Juan García",
+      "message_placeholder": "Cuéntame en qué puedo ayudarte...",
       "submit": "Enviar Mensaje",
       "sending": "Redirigiendo al correo...",
       "success": "¡Mensaje enviado exitosamente!",
@@ -137,5 +143,18 @@
     "instagram": "Seguir en Instagram",
     "facebook": "Seguir en Facebook",
     "scroll_top": "Volver arriba"
+  },
+  "seo": {
+    "home_title": "GISSEL MUJICA | Realtor® en Florida",
+    "home_desc": "Agente inmobiliario bilingüe en Florida. Te ayudo a comprar, vender e invertir en propiedades con acompañamiento profesional. ¡Tu casa ideal te espera!",
+    "home_keywords": "realtor florida, compra venta casas florida, agente inmobiliario bilingüe, comprar casa florida, vender propiedad florida, inversión inmobiliaria florida",
+    "services_title": "Servicios Inmobiliarios Profesionales",
+    "services_desc": "Asesoría en compra, venta e inversión en Florida. Acompañamiento personalizado para tu éxito inmobiliario.",
+    "about_title": "Sobre Gissel Mujica | Tu Aliada Inmobiliaria",
+    "about_desc": "Conoce más sobre Gissel Mujica, Realtor® en Florida comprometida con tu tranquilidad y éxito en el mercado inmobiliario.",
+    "contact_title": "Contacto Gissel Mujica | Realtor® Florida",
+    "contact_desc": "¿Listo para tu siguiente paso inmobiliario? Consulta con Gissel Mujica hoy para obtener asesoría experta en Florida.",
+    "faq_title": "Preguntas Frecuentes | Bienes Raíces Florida",
+    "faq_desc": "Respuestas a las dudas comunes sobre compra, venta e inversión en el mercado inmobiliario de Florida."
   }
 }
